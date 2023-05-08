@@ -21,6 +21,7 @@ class DioClientImpl implements DioClient {
         receiveTimeout: timeOutDuration,
         sendTimeout: timeOutDuration,
         receiveDataWhenStatusError: true,
+        queryParameters: {'key': EnvironmentConfig.apiKey},
       ),
     );
     return _dioClient.._dio = dioInstance;

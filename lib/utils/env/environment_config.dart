@@ -8,7 +8,7 @@ class EnvironmentConfig {
 
   static const String activeEnvironment = 'staging';
   static const String apiKey = '4230c52b297a48c0b8a55c8546ff9114';
-  static const String apiUrl = 'https://api.rawg.io/api/games/';
+  static const String apiUrl = 'https://api.rawg.io/api';
 }
 
 
@@ -18,5 +18,5 @@ class EnvironmentConfig {
 //
 //   static const String activeEnvironment = 'production';
 //   static const String apiKey = '02ef6ba5d13444ee86bad607e8bce3f4';
-//   static const String apiUrl = 'https://api.rawg.io/api/games/';
+//   static const String apiUrl = 'https://api.rawg.io/api';
 // }
