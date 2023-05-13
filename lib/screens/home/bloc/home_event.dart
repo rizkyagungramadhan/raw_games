@@ -21,3 +21,12 @@ class SwitchItemViewEvent extends HomeEvent {
   @override
   List<Object> get props => [itemViewType];
 }
+
+class NavigateToGameScreenEvent extends HomeEvent {
+  final int gameId;
+
+  const NavigateToGameScreenEvent({required this.gameId});
+
+  @override
+  List<Object> get props => [gameId];
+}
