@@ -7,12 +7,16 @@ class ShimmerBox extends StatelessWidget {
   final double? width;
   final double? height;
   final EdgeInsets padding;
+  final Color? baseColor;
+  final Color? backgroundColor;
 
   const ShimmerBox({
     super.key,
     this.width,
     this.height,
     this.padding = EdgeInsets.zero,
+    this.baseColor,
+    this.backgroundColor,
   });
 
   @override
@@ -20,17 +24,17 @@ class ShimmerBox extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Shimmer.fromColors(
-        baseColor: AppColor.grey,
+        baseColor: baseColor ?? AppColor.grey,
         highlightColor: Colors.white,
         enabled: true,
         child: Container(
           width: width,
           height: height,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(
               Radius.circular(AppDimen.radiusMedium),
             ),
-            color: AppColor.grey,
+            color: backgroundColor ?? Colors.white,
           ),
         ),
       ),

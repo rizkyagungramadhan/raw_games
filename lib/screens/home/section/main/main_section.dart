@@ -4,7 +4,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:raw_games/api/repository/game/model/game_response.dart';
 import 'package:raw_games/common/exception/app_exception.dart';
 import 'package:raw_games/screens/home/bloc/home_bloc.dart';
-import 'package:raw_games/screens/home/const/home_const.dart';
+import 'package:raw_games/screens/home/const/home_screen_const.dart';
 import 'package:raw_games/screens/home/section/main/widgets/home_grid_view.dart';
 import 'package:raw_games/screens/home/section/main/widgets/home_list_view.dart';
 import 'package:raw_games/utils/style/app_color.dart';

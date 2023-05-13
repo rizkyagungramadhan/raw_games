@@ -8,7 +8,7 @@ import 'package:raw_games/api/repository/game/model/game_request.dart';
 import 'package:raw_games/api/repository/game/model/game_response.dart';
 import 'package:raw_games/common/exception/response_exception.dart';
 import 'package:raw_games/di/service_locator.dart';
-import 'package:raw_games/screens/home/const/home_const.dart';
+import 'package:raw_games/screens/home/const/home_screen_const.dart';
 import 'package:raw_games/utils/router/app_router.dart';
 import 'package:raw_games/utils/router/route.dart';
 
@@ -39,7 +39,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       final request = GameRequest(
         page: event.page,
-        pageSize: HomeConst.fetchPerPage,
+        pageSize: HomeScreenConst.fetchPerPage,
       );
       final response = await _gameRepo.getListOfGames(request);
 
@@ -50,7 +50,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       final currentItem = state.items ?? <GameResponse>[];
       final items =
           (isRefreshEvent ? <GameResponse>[] : currentItem) + response.results;
-      final isLastPage = response.results.length < HomeConst.fetchPerPage;
+      final isLastPage = response.results.length < HomeScreenConst.fetchPerPage;
       emit(
         state.copyWith(
           items: items,

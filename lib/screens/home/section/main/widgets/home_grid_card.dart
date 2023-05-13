@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:raw_games/api/repository/game/model/game_response.dart';
 import 'package:raw_games/screens/home/bloc/home_bloc.dart';
-import 'package:raw_games/screens/home/const/home_const.dart';
+import 'package:raw_games/screens/home/const/home_screen_const.dart';
 import 'package:raw_games/utils/extensions/context_extension.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
@@ -44,13 +44,13 @@ class HomeGridCard extends StatelessWidget {
               flex: 6,
               child: SizedBox(
                 width: double.infinity,
-                height: HomeConst.imageHeight,
+                height: HomeScreenConst.imageHeight,
                 child: CachedNetworkImage(
                   imageUrl: item.imageUrl,
-                  memCacheHeight: context.fitImageCache(HomeConst.imageHeight),
+                  memCacheHeight: context.fitImageCache(HomeScreenConst.imageHeight),
                   fit: BoxFit.cover,
                   progressIndicatorBuilder: (_, __, ___) {
-                    return const ShimmerBox(height: HomeConst.imageHeight);
+                    return const ShimmerBox(height: HomeScreenConst.imageHeight);
                   },
                 ),
               ),

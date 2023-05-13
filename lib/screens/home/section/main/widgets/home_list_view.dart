@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:raw_games/api/repository/game/model/game_response.dart';
-import 'package:raw_games/screens/home/const/home_const.dart';
+import 'package:raw_games/screens/home/const/home_screen_const.dart';
 import 'package:raw_games/screens/home/section/main/widgets/home_list_card.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/widgets/shimmer_box.dart';
@@ -24,13 +24,13 @@ class HomeListView extends StatelessWidget {
         firstPageProgressIndicatorBuilder: (context) {
           return ListView.builder(
             shrinkWrap: true,
-            itemCount: HomeConst.shimmerTotalItem,
+            itemCount: HomeScreenConst.shimmerTotalItem,
             itemBuilder: (context, index) {
               return const Padding(
                 padding: EdgeInsets.only(
                   bottom: AppDimen.paddingMedium,
                 ),
-                child: ShimmerBox(height: HomeConst.shimmerGridHeight),
+                child: ShimmerBox(height: HomeScreenConst.shimmerGridHeight),
               );
             },
           );

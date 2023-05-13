@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:raw_games/api/repository/game/model/game_response.dart';
 import 'package:raw_games/screens/home/bloc/home_bloc.dart';
-import 'package:raw_games/screens/home/const/home_const.dart';
+import 'package:raw_games/screens/home/const/home_screen_const.dart';
 import 'package:raw_games/utils/extensions/context_extension.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
@@ -23,7 +23,7 @@ class HomeListCard extends StatelessWidget {
             .add(NavigateToGameScreenEvent(gameId: item.id));
       },
       child: Container(
-        height: HomeConst.listHeight,
+        height: HomeScreenConst.listHeight,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -40,17 +40,17 @@ class HomeListCard extends StatelessWidget {
           children: [
             Container(
               clipBehavior: Clip.antiAlias,
-              height: HomeConst.listHeight,
-              width: HomeConst.listHeight,
+              height: HomeScreenConst.listHeight,
+              width: HomeScreenConst.listHeight,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppDimen.radiusMedium),
               ),
               child: CachedNetworkImage(
                 imageUrl: item.imageUrl,
-                memCacheHeight: context.fitImageCache(HomeConst.listHeight),
+                memCacheHeight: context.fitImageCache(HomeScreenConst.listHeight),
                 fit: BoxFit.cover,
                 progressIndicatorBuilder: (_, __, ___) {
-                  return const ShimmerBox(height: HomeConst.listHeight);
+                  return const ShimmerBox(height: HomeScreenConst.listHeight);
                 },
               ),
             ),

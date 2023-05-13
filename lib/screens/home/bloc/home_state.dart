@@ -27,7 +27,7 @@ class HomeState extends Equatable {
       page: page ?? this.page,
       items: items,
       isLastPage: isLastPage ?? this.isLastPage,
-      error: error ?? this.error,
+      error: error,
     );
   }
 

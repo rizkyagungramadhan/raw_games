@@ -1,5 +1,5 @@
-class HomeConst {
-  const HomeConst._();
+class HomeScreenConst {
+  const HomeScreenConst._();
 
   static const fetchPerPage = 10;
   static const firstPageKey = 1;

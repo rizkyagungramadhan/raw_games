@@ -1,10 +1,24 @@
 part of 'game_bloc.dart';
 
-abstract class GameState extends Equatable {
-  const GameState();
-}
+class GameState extends Equatable {
+  final bool isLoading;
+  final GameDetailResponse? item;
+  final dynamic error;
 
-class GameInitial extends GameState {
+  const GameState({this.isLoading = true, this.item, this.error});
+
+  GameState copyWith({
+    bool? isLoading,
+    GameDetailResponse? item,
+    dynamic error,
+  }) {
+    return GameState(
+      isLoading: isLoading ?? this.isLoading,
+      item: item ?? this.item,
+      error: error,
+    );
+  }
+
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [isLoading, item, error];
 }

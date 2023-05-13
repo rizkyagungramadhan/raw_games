@@ -7,7 +7,7 @@ abstract class HomeEvent extends Equatable {
 class FetchEvent extends HomeEvent {
   final int page;
 
-  const FetchEvent({this.page = HomeConst.firstPageKey});
+  const FetchEvent({this.page = HomeScreenConst.firstPageKey});
 
   @override
   List<Object> get props => [page];
