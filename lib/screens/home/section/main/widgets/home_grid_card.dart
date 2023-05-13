@@ -47,10 +47,17 @@ class HomeGridCard extends StatelessWidget {
                 height: HomeScreenConst.imageHeight,
                 child: CachedNetworkImage(
                   imageUrl: item.imageUrl,
-                  memCacheHeight: context.fitImageCache(HomeScreenConst.imageHeight),
+                  memCacheHeight:
+                      context.fitImageCache(HomeScreenConst.imageHeight),
                   fit: BoxFit.cover,
                   progressIndicatorBuilder: (_, __, ___) {
-                    return const ShimmerBox(height: HomeScreenConst.imageHeight);
+                    return const ShimmerBox(
+                      height: HomeScreenConst.imageHeight,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(AppDimen.radiusMedium),
+                        topRight: Radius.circular(AppDimen.radiusMedium),
+                      ),
+                    );
                   },
                 ),
               ),

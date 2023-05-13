@@ -9,6 +9,7 @@ class ShimmerBox extends StatelessWidget {
   final EdgeInsets padding;
   final Color? baseColor;
   final Color? backgroundColor;
+  final BorderRadiusGeometry? borderRadius;
 
   const ShimmerBox({
     super.key,
@@ -17,6 +18,7 @@ class ShimmerBox extends StatelessWidget {
     this.padding = EdgeInsets.zero,
     this.baseColor,
     this.backgroundColor,
+    this.borderRadius,
   });
 
   @override
@@ -31,9 +33,10 @@ class ShimmerBox extends StatelessWidget {
           width: width,
           height: height,
           decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(AppDimen.radiusMedium),
-            ),
+            borderRadius: borderRadius ??
+                const BorderRadius.all(
+                  Radius.circular(AppDimen.radiusMedium),
+                ),
             color: backgroundColor ?? Colors.white,
           ),
         ),

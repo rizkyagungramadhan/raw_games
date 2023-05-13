@@ -8,6 +8,7 @@ import 'package:raw_games/screens/game/bloc/game_bloc.dart';
 import 'package:raw_games/screens/game/section/about_section.dart';
 import 'package:raw_games/screens/game/section/rating_score_section.dart';
 import 'package:raw_games/screens/game/section/release_section.dart';
+import 'package:raw_games/screens/game/section/screenshot_section.dart';
 import 'package:raw_games/utils/extensions/context_extension.dart';
 import 'package:raw_games/utils/style/app_color.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
@@ -74,6 +75,8 @@ class _GameDetailSection extends StatelessWidget {
           AboutSection(item: item),
           const SizedBox(height: AppDimen.paddingLarge),
           ReleaseSection(item: item),
+          const SizedBox(height: AppDimen.paddingLarge),
+          ScreenshotSection(gameId: item.id),
         ],
       ),
     );
@@ -101,6 +104,12 @@ class _GameAppBar extends StatelessWidget {
           background: CachedNetworkImage(
             imageUrl: data.imageUrl,
             memCacheHeight: context.fitImageCache(flexibleHeight),
+            progressIndicatorBuilder: (_, __, ___) {
+              return ShimmerBox(
+                height: flexibleHeight,
+                borderRadius: const BorderRadius.all(Radius.zero),
+              );
+            },
             fit: BoxFit.cover,
           ),
         ),
@@ -120,7 +129,7 @@ class _GameAppBar extends StatelessWidget {
             padding: const EdgeInsets.only(right: AppDimen.paddingSmall),
             child: IconButton(
               onPressed: () {
-                if(item?.website is! String) {
+                if (item?.website is! String) {
                   return;
                 }
 
