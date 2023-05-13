@@ -7,10 +7,10 @@ import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
 import 'package:raw_games/widgets/shimmer_box.dart';
 
-class GameListCard extends StatelessWidget {
+class HomeListCard extends StatelessWidget {
   final GameResponse item;
 
-  const GameListCard({Key? key, required this.item}) : super(key: key);
+  const HomeListCard({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

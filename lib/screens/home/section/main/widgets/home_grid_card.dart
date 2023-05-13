@@ -7,10 +7,10 @@ import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
 import 'package:raw_games/widgets/shimmer_box.dart';
 
-class GameGridCard extends StatelessWidget {
+class HomeGridCard extends StatelessWidget {
   final GameResponse item;
 
-  const GameGridCard({Key? key, required this.item}) : super(key: key);
+  const HomeGridCard({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class GameGridCard extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.symmetric(
                             vertical: 2,
-                            horizontal: 4,
+                            horizontal: AppDimen.paddingExtraSmall,
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(

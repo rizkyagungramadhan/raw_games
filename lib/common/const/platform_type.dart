@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 enum PlatformType {
-
   android('android', FontAwesomeIcons.android),
   iOS('ios', FontAwesomeIcons.apple),
   pc('pc', FontAwesomeIcons.desktop),
@@ -13,5 +12,6 @@ enum PlatformType {
 
   final String slug;
   final IconData iconData;
-  const PlatformType( this.slug, this.iconData);
+
+  const PlatformType(this.slug, this.iconData);
 }
