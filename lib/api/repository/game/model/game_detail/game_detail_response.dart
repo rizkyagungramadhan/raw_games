@@ -17,6 +17,7 @@ class GameDetailResponse extends IGameResponse {
 
   final String? website;
 
+  @JsonKey(name: "metacritic_url")
   final String? metacriticUrl;
 
   final List<DeveloperResponse> developers;

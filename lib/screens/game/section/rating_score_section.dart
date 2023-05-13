@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_detail_response.dart';
+import 'package:raw_games/screens/game/bloc/game_bloc.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
 import 'package:raw_games/widgets/rating_star_icon.dart';
@@ -43,7 +45,9 @@ class RatingScoreSection extends StatelessWidget {
                       return;
                     }
 
-                    // TODO(agung): Open on browser
+                    context
+                        .read<GameBloc>()
+                        .add(OpenBrowserEvent(item.metacriticUrl ?? ''));
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(

@@ -125,23 +125,22 @@ class _GameAppBar extends StatelessWidget {
           ),
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: AppDimen.paddingSmall),
-            child: IconButton(
-              onPressed: () {
-                if (item?.website is! String) {
-                  return;
-                }
-
-                // TODO(agung): Open on browser
-              },
-              icon: const Icon(
-                FontAwesomeIcons.circleInfo,
-                color: Colors.white,
-                size: AppDimen.sizeIconMedium,
+          if (item?.website is String)
+            Padding(
+              padding: const EdgeInsets.only(right: AppDimen.paddingSmall),
+              child: IconButton(
+                onPressed: () {
+                  context
+                      .read<GameBloc>()
+                      .add(OpenBrowserEvent(item?.website ?? ''));
+                },
+                icon: const Icon(
+                  FontAwesomeIcons.circleInfo,
+                  color: Colors.white,
+                  size: AppDimen.sizeIconMedium,
+                ),
               ),
-            ),
-          )
+            )
         ],
       );
     }

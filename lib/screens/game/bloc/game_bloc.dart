@@ -7,11 +7,13 @@ import 'package:raw_games/api/repository/game/game_repository.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_detail_response.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_screenshot_request.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_screenshot_response.dart';
+import 'package:raw_games/common/exception/app_exception.dart';
 import 'package:raw_games/common/exception/response_exception.dart';
 import 'package:raw_games/di/service_locator.dart';
 import 'package:raw_games/screens/game/const/game_screen_const.dart';
 import 'package:raw_games/utils/router/app_router.dart';
 import 'package:raw_games/utils/router/route.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'game_event.dart';
 
@@ -25,6 +27,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     on<FetchDetailEvent>(_fetchDetail);
     on<FetchScreenshotEvent>(_fetchScreenshots);
     on<OpenDetailImageEvent>(_openImageDetail);
+    on<OpenBrowserEvent>(_openUrlOnBrowser);
   }
 
   Future<void> _fetchDetail(
@@ -88,6 +91,19 @@ class GameBloc extends Bloc<GameEvent, GameState> {
       OpenDetailImageEvent event, Emitter<GameState> _) async {
     try {
       unawaited(_appRouter.rootNavigateTo(Routes.gallery, event.image));
+    } catch (error) {
+      if (kDebugMode) {
+        print(error);
+      }
+    }
+  }
+
+  Future<void> _openUrlOnBrowser(
+      OpenBrowserEvent event, Emitter<GameState> _) async {
+    try {
+      if (!await launchUrl(Uri.parse(event.url), mode: LaunchMode.externalApplication)) {
+        throw AppException('Could not launch ${event.url}');
+      }
     } catch (error) {
       if (kDebugMode) {
         print(error);

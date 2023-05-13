@@ -34,3 +34,13 @@ class OpenDetailImageEvent extends GameEvent {
   @override
   List<Object> get props => [image];
 }
+
+
+class OpenBrowserEvent extends GameEvent {
+  final String url;
+
+  const OpenBrowserEvent(this.url);
+
+  @override
+  List<Object> get props => [url];
+}
