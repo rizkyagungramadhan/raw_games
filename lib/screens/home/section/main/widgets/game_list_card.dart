@@ -63,22 +63,35 @@ class GameListCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Icon(
-                        Icons.play_arrow,
-                        size: AppDimen.fontSmall,
-                      ),
+                      if (item.platforms.isNotEmpty)
+                        Row(
+                          children: item.platformIcons.map(
+                            (iconData) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                  right: AppDimen.paddingExtraSmall,
+                                ),
+                                child: Icon(
+                                  iconData,
+                                  size: AppDimen.sizeIconSmall,
+                                  color: Colors.black54,
+                                ),
+                              );
+                            },
+                          ).toList(),
+                        ),
                       if (item.metacriticScore != null)
                         Container(
                           padding: const EdgeInsets.symmetric(
                             vertical: 2,
-                            horizontal: 4,
+                            horizontal: AppDimen.paddingExtraSmall,
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(
                               AppDimen.radiusMedium,
                             ),
                             border:
-                            Border.all(width: 1, color: item.scoreColor),
+                                Border.all(width: 1, color: item.scoreColor),
                             color: Colors.transparent,
                           ),
                           child: Text(

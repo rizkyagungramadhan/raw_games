@@ -55,10 +55,23 @@ class GameGridCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Icon(
-                        Icons.play_arrow,
-                        size: AppDimen.fontSmall,
-                      ),
+                      if (item.platforms.isNotEmpty)
+                        Row(
+                          children: item.platformIcons.map(
+                            (iconData) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                  right: AppDimen.paddingExtraSmall,
+                                ),
+                                child: Icon(
+                                  iconData,
+                                  size: AppDimen.sizeIconSmall,
+                                  color: Colors.black54,
+                                ),
+                              );
+                            },
+                          ).toList(),
+                        ),
                       if (item.metacriticScore != null)
                         Container(
                           padding: const EdgeInsets.symmetric(

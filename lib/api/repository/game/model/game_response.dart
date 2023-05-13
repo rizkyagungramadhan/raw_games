@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:raw_games/api/repository/game/model/platform_wrapper.dart';
 import 'package:raw_games/utils/style/app_color.dart';
 
 part 'game_response.g.dart';
@@ -15,6 +14,7 @@ class GameResponse {
   final double rating;
   @JsonKey(name: "metacritic")
   final num? metacriticScore;
+  final List<PlatformWrapper> platforms;
 
   GameResponse(
     this.id,
@@ -22,6 +22,7 @@ class GameResponse {
     this.imageUrl,
     this.rating,
     this.metacriticScore,
+    this.platforms,
   );
 
   factory GameResponse.fromJson(Map<String, dynamic> json) {
@@ -34,5 +35,14 @@ class GameResponse {
     }
 
     return AppColor.green;
+  }
+
+  Set<IconData> get platformIcons {
+    if (platforms.isEmpty) return <IconData>{};
+
+    return platforms
+        .where((p) => p.platform.iconData is IconData)
+        .map((p) => p.platform.iconData!)
+        .toSet();
   }
 }

@@ -14,7 +14,6 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  static const fetchLimit = 10;
   final _gameRepo = serviceLocator<GameRepository>();
 
   HomeBloc() : super(const HomeState()) {
@@ -33,7 +32,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       );
 
-      final request = GameRequest(page: event.page, pageSize: fetchLimit);
+      final request = GameRequest(
+        page: event.page,
+        pageSize: HomeConst.fetchPerPage,
+      );
       final response = await _gameRepo.getListOfGames(request);
 
       if (response.error != null) {
@@ -43,7 +45,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       final currentItem = state.items ?? <GameResponse>[];
       final items =
           (isRefreshEvent ? <GameResponse>[] : currentItem) + response.results;
-      final isLastPage = (response.count ?? 0) == items.length;
+      final isLastPage = response.results.length < HomeConst.fetchPerPage;
       emit(
         state.copyWith(
           items: items,

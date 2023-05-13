@@ -23,6 +23,7 @@ class AppDimen {
 
   // Size
   static const sizeLoadingIndicator = 32.0;
+  static const sizeIconSmall = 12.0;
   static const sizeIconMedium = 16.0;
 
 }
