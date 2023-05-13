@@ -41,7 +41,7 @@ class HomeGridCard extends StatelessWidget {
         child: Column(
           children: [
             Flexible(
-              flex: 6,
+              flex: 5,
               child: SizedBox(
                 width: double.infinity,
                 height: HomeScreenConst.imageHeight,
@@ -115,7 +115,7 @@ class HomeGridCard extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: AppDimen.paddingSmall),
-                    Expanded(
+                    Flexible(
                       child: Text(
                         '${item.name}\n',
                         style: AppTextStyle.bold(size: AppDimen.fontMedium),
