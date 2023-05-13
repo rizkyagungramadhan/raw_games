@@ -16,7 +16,6 @@ class HomeGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PagedGridView(
       pagingController: pagingController,
-      primary: false,
       builderDelegate: PagedChildBuilderDelegate<GameResponse>(
         itemBuilder: (context, item, index) => HomeGridCard(item: item),
         firstPageProgressIndicatorBuilder: (context) {

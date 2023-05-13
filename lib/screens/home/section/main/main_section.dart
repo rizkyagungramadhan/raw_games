@@ -7,10 +7,10 @@ import 'package:raw_games/screens/home/bloc/home_bloc.dart';
 import 'package:raw_games/screens/home/const/home_screen_const.dart';
 import 'package:raw_games/screens/home/section/main/widgets/home_grid_view.dart';
 import 'package:raw_games/screens/home/section/main/widgets/home_list_view.dart';
+import 'package:raw_games/utils/extensions/string_extension.dart';
 import 'package:raw_games/utils/style/app_color.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
-
 
 class MainSection extends StatefulWidget {
   const MainSection({Key? key}) : super(key: key);
@@ -58,10 +58,16 @@ class _MainSectionState extends State<MainSection> {
           children: [
             const SizedBox(height: AppDimen.paddingMedium),
             Text(
-              'Explore games all over the world!',
+              (state.keyword.isNotNullOrEmpty &&
+                      state.error == null &&
+                      state.totalSearchResult > 0)
+                  ? 'Found ${state.totalSearchResult} ${state.totalSearchResult < 1 ? 'game' : 'games'} for \'${state.keyword}\''
+                  : 'Explore games all over the world!',
               style: AppTextStyle.bold(size: AppDimen.fontExtraLarge),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
-            const SizedBox(height: AppDimen.paddingLarge),
+            const SizedBox(height: AppDimen.paddingMedium),
             _ItemViewButton(activeViewType: state.itemViewType),
             const SizedBox(height: AppDimen.paddingMedium),
             Expanded(

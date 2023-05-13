@@ -14,7 +14,15 @@ class GameRequest implements IPaginationRequest {
 
   String platforms;
 
-  GameRequest({this.page = 1, this.pageSize = 10, this.platforms = '187'});
+  @JsonKey(name: "search")
+  String? searchKeyword;
+
+  GameRequest({
+    this.page = 1,
+    this.pageSize = 10,
+    this.platforms = '187',
+    this.searchKeyword,
+  });
 
   @override
   Map<String, dynamic> toJson() => _$GameRequestToJson(this);

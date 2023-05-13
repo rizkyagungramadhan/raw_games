@@ -1,18 +1,25 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:raw_games/api/repository/game/model/game_request.dart';
+import 'package:raw_games/api/interface/i_pagination_request.dart';
 
 part 'game_screenshot_request.g.dart';
 
 @JsonSerializable()
-class GameScreenshotRequest extends GameRequest {
+class GameScreenshotRequest implements IPaginationRequest {
   @JsonKey(includeToJson: false)
   final int gameId;
 
+  @override
+  int page;
+
+  @override
+  @JsonKey(name: "page_size")
+  int pageSize;
+
   GameScreenshotRequest({
     required this.gameId,
-    int page = 1,
-    int pageSize = 5,
-  }) : super(page: page, pageSize: pageSize, platforms: '');
+    required this.page,
+    required this.pageSize,
+  });
 
   @override
   Map<String, dynamic> toJson() => _$GameScreenshotRequestToJson(this);

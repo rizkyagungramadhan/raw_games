@@ -13,6 +13,15 @@ class FetchEvent extends HomeEvent {
   List<Object> get props => [page];
 }
 
+class SearchEvent extends HomeEvent {
+  final String keyword;
+
+  const SearchEvent({required this.keyword});
+
+  @override
+  List<Object> get props => [keyword];
+}
+
 class SwitchItemViewEvent extends HomeEvent {
   final HomeItemViewType itemViewType;
 
