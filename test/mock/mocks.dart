@@ -21,10 +21,12 @@ void initMockDependencies() {
 
   _initMockAppRouter();
   serviceLocatorTest
+      .registerLazySingleton<BuildContext>(() => MockBuildContext());
+  serviceLocatorTest
       .registerLazySingleton<GameRepository>(() => MockGameRepository());
   serviceLocatorTest.registerLazySingleton<AppRouter>(() => MockAppRouter());
   serviceLocatorTest.registerLazySingleton<DioClient>(
-        () => MockDioClient(),
+    () => MockDioClient(),
   );
 }
 
