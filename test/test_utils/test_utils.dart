@@ -25,3 +25,10 @@ Future<void> forcePumpAndSettle({required WidgetTester tester}) async {
     await tester.pump(const Duration(seconds: 1));
   }
 }
+
+void initializeWindowSize(WidgetTester tester) {
+  // Based on iPhone SE, resulting in viewport with size: 375x667 logical pixels
+  tester.binding.window.physicalSizeTestValue = const Size(750, 1334);
+  tester.binding.window.devicePixelRatioTestValue = 1;
+}
+
