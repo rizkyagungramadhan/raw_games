@@ -1,23 +1,24 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:raw_games/api/interface/i_pagination_request.dart';
 
 part 'game_request.g.dart';
 
 @JsonSerializable()
-class GameRequest implements IPaginationRequest {
+class GameRequest extends Equatable implements IPaginationRequest {
   @override
-  int page;
+  final int page;
 
   @override
   @JsonKey(name: "page_size")
-  int pageSize;
+  final int pageSize;
 
-  String platforms;
+  final String platforms;
 
   @JsonKey(name: "search")
-  String? searchKeyword;
+  final String? searchKeyword;
 
-  GameRequest({
+  const GameRequest({
     this.page = 1,
     this.pageSize = 10,
     this.platforms = '187',
@@ -26,4 +27,7 @@ class GameRequest implements IPaginationRequest {
 
   @override
   Map<String, dynamic> toJson() => _$GameRequestToJson(this);
+
+  @override
+  List<Object?> get props => [page, pageSize, platforms, searchKeyword];
 }

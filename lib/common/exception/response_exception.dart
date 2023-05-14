@@ -1,11 +1,15 @@
+import 'package:equatable/equatable.dart';
 import 'package:raw_games/common/exception/app_exception.dart';
 
-class ResponseException implements AppException {
+class ResponseException extends Equatable implements AppException {
   @override
-  String message;
+  final String message;
 
-  ResponseException(this.message);
+  const ResponseException(this.message);
 
   @override
   String toString() => message;
+
+  @override
+  List<Object> get props => [message];
 }

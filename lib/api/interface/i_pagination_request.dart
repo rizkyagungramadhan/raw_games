@@ -1,8 +1,8 @@
 abstract class IPaginationRequest {
 
-  int page;
+  final int page;
 
-  int pageSize;
+  final int pageSize;
 
   IPaginationRequest(this.page, this.pageSize);
 

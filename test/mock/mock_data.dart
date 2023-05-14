@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:raw_games/api/interface/response_list.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/developer_response.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_detail_response.dart';
+import 'package:raw_games/api/repository/game/model/game_detail/game_screenshot_response.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/genre_response.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/publisher_response.dart';
 import 'package:raw_games/api/repository/game/model/game_response.dart';
@@ -90,3 +91,6 @@ Map<String, dynamic> mockResponseListAsJson<T>(
 }
 
 const mockLocale = Locale('en_US');
+
+final mockGameScreenshot =
+    GameScreenshotResponse(1, 'https://any.co.id', 1080, 720);

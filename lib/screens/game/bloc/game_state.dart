@@ -10,7 +10,7 @@ class GameState extends Equatable {
   final dynamic getScreenshotError;
 
   const GameState({
-    this.isLoading = true,
+    this.isLoading = false,
     this.item,
     this.error,
     this.screenshots,
