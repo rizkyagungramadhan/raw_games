@@ -40,7 +40,7 @@ void main() {
 
     test('getDetail returns a GameDetailResponse', () async {
       const gameId = 1;
-      final expectedResponse = mockGameDetailResponse;
+      final expectedResponse = mockGameDetailResponse();
 
       when(mockRepository.getDetail(gameId: gameId)).thenAnswer(
         (_) => Future.value(expectedResponse),

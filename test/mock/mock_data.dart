@@ -8,7 +8,7 @@ import 'package:raw_games/api/repository/game/model/game_detail/publisher_respon
 import 'package:raw_games/api/repository/game/model/platform_response.dart';
 import 'package:raw_games/api/repository/game/model/platform_wrapper.dart';
 
-final mockGameDetailResponse = GameDetailResponse(
+GameDetailResponse mockGameDetailResponse({bool withGenre = true}) => GameDetailResponse(
     3498,
     "Grand Theft Auto V",
     [
@@ -32,7 +32,7 @@ final mockGameDetailResponse = GameDetailResponse(
       DeveloperResponse(1, "Rockstar North"),
       DeveloperResponse(2, "Rockstar Games")
     ],
-    [GenreResponse(1, "Action"), GenreResponse(2, "Adventure")],
+    withGenre ? [GenreResponse(1, "Action"), GenreResponse(2, "Adventure")] : [],
     [PublisherResponse(1, "Rockstar Games")]);
 
 final mockError = Exception('error');
