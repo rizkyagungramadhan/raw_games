@@ -15,6 +15,7 @@ class HomeListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PagedListView.separated(
+      padding: EdgeInsets.zero,
       pagingController: pagingController,
       shrinkWrap: true,
       builderDelegate: PagedChildBuilderDelegate<GameResponse>(
@@ -23,6 +24,7 @@ class HomeListView extends StatelessWidget {
         },
         firstPageProgressIndicatorBuilder: (context) {
           return ListView.builder(
+            padding: EdgeInsets.zero,
             shrinkWrap: true,
             itemCount: HomeScreenConst.shimmerTotalItem,
             itemBuilder: (context, index) {

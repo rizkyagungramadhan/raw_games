@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_screenshot_response.dart';
 import 'package:raw_games/common/exception/app_exception.dart';
+import 'package:raw_games/generated/l10n.dart';
 import 'package:raw_games/screens/game/bloc/game_bloc.dart';
 import 'package:raw_games/screens/game/const/game_screen_const.dart';
 import 'package:raw_games/utils/extensions/context_extension.dart';
@@ -63,7 +64,7 @@ class _ScreenshotSectionState extends State<ScreenshotSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Screenshots',
+              S.of(context).screenshots,
               style: AppTextStyle.bold(size: AppDimen.fontLarge),
             ),
             const SizedBox(height: AppDimen.paddingLarge),
@@ -71,6 +72,7 @@ class _ScreenshotSectionState extends State<ScreenshotSection> {
               pagingController: _pagingController,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.zero,
               builderDelegate:
                   PagedChildBuilderDelegate<GameScreenshotResponse>(
                 itemBuilder: (context, item, index) {
@@ -112,6 +114,7 @@ class _ScreenshotSectionState extends State<ScreenshotSection> {
                 },
                 firstPageProgressIndicatorBuilder: (context) {
                   return ListView.builder(
+                    padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     itemCount: GameScreenConst.shimmerTotalItem,
                     itemBuilder: (context, index) {

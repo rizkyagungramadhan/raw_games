@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_detail_response.dart';
+import 'package:raw_games/generated/l10n.dart';
 import 'package:raw_games/screens/game/bloc/game_bloc.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
@@ -17,7 +18,7 @@ class RatingScoreSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Rating & Score',
+          S.of(context).ratingAndScore,
           style: AppTextStyle.bold(size: AppDimen.fontLarge),
         ),
         const SizedBox(height: AppDimen.paddingMedium),

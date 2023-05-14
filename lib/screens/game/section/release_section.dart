@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_detail_response.dart';
+import 'package:raw_games/generated/l10n.dart';
 import 'package:raw_games/utils/extensions/date_time_extension.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
@@ -15,7 +16,7 @@ class ReleaseSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Release Information',
+          S.of(context).releaseInformation,
           style: AppTextStyle.bold(size: AppDimen.fontLarge),
         ),
         const SizedBox(height: AppDimen.paddingMedium),
@@ -44,7 +45,8 @@ class ReleaseSection extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Released on', style: AppTextStyle.bold()),
+                        Text(S.of(context).releasedOn,
+                            style: AppTextStyle.bold()),
                         const SizedBox(height: AppDimen.paddingMedium),
                         Text(
                           item.releaseDate.asFullDate,
@@ -59,7 +61,8 @@ class ReleaseSection extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Available on', style: AppTextStyle.bold()),
+                          Text(S.of(context).availableFor,
+                              style: AppTextStyle.bold()),
                           const SizedBox(height: AppDimen.paddingMedium),
                           Row(
                             children: item.platformIcons.map(
@@ -93,7 +96,8 @@ class ReleaseSection extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Publisher', style: AppTextStyle.bold()),
+                          Text(S.of(context).publisher,
+                              style: AppTextStyle.bold()),
                           const SizedBox(height: AppDimen.paddingMedium),
                           Text(
                             item.publishers.map((p) => p.name).join(', '),
@@ -108,7 +112,8 @@ class ReleaseSection extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Developer', style: AppTextStyle.bold()),
+                          Text(S.of(context).developer,
+                              style: AppTextStyle.bold()),
                           const SizedBox(height: AppDimen.paddingMedium),
                           Text(
                             item.developers.map((d) => d.name).join(', '),

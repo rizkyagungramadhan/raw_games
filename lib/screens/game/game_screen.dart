@@ -27,35 +27,29 @@ class GameScreen extends StatelessWidget {
       create: (_) => GameBloc()..add(FetchDetailEvent(gameId)),
       child: BlocBuilder<GameBloc, GameState>(
         builder: (context, state) {
-          return Container(
-            color: AppColor.primary,
-            child: SafeArea(
-              child: Scaffold(
-                body: CustomScrollView(
-                  slivers: [
-                    _GameAppBar(isLoading: state.isLoading, item: state.item),
-                    SliverToBoxAdapter(
-                      child: state.item is GameDetailResponse
-                          ? _GameDetailSection(
-                              item: state.item as GameDetailResponse,
-                            )
-                          : SizedBox(
-                              height: MediaQuery.of(context).size.height -
-                                  kToolbarHeight,
-                              child: const Center(
-                                child: CupertinoActivityIndicator(),
-                              ),
-                            ),
-                    )
-                  ],
-                ),
-              ),
+          return Scaffold(
+            body: CustomScrollView(
+              slivers: [
+                _GameAppBar(isLoading: state.isLoading, item: state.item),
+                SliverToBoxAdapter(
+                  child: state.item is GameDetailResponse
+                      ? _GameDetailSection(
+                          item: state.item as GameDetailResponse,
+                        )
+                      : SizedBox(
+                          height: MediaQuery.of(context).size.height -
+                              kToolbarHeight,
+                          child: const Center(
+                            child: CupertinoActivityIndicator(),
+                          ),
+                        ),
+                )
+              ],
             ),
           );
         },
       ),
     );
-    // return const Text('Game Screen with id $gameId');
   }
 }
 
@@ -149,17 +143,23 @@ class _GameAppBar extends StatelessWidget {
       backgroundColor: AppColor.primary,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
-        collapseMode: CollapseMode.pin,
-        background: Center(
-          child: ShimmerBox(
-            width: MediaQuery.of(context).size.width / 2,
-            baseColor: Colors.transparent,
-            backgroundColor: Colors.white10,
-            padding: const EdgeInsets.symmetric(
-              vertical: AppDimen.paddingSmall,
-              horizontal: AppDimen.paddingMedium,
+        collapseMode: CollapseMode.none,
+        background: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).padding.top,
             ),
-          ),
+            ShimmerBox(
+              width: MediaQuery.of(context).size.width / 2,
+              height: AppDimen.sizeIconExtraLarge,
+              baseColor: Colors.transparent,
+              backgroundColor: Colors.white10,
+              padding: const EdgeInsets.symmetric(
+                vertical: AppDimen.paddingSmall,
+                horizontal: AppDimen.paddingMedium,
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_detail_response.dart';
+import 'package:raw_games/generated/l10n.dart';
 import 'package:raw_games/screens/game/const/game_screen_const.dart';
 import 'package:raw_games/utils/style/app_color.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
@@ -17,7 +18,7 @@ class AboutSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'About',
+          S.of(context).about,
           style: AppTextStyle.bold(size: AppDimen.fontLarge),
         ),
         const SizedBox(height: AppDimen.paddingMedium),
@@ -38,8 +39,8 @@ class AboutSection extends StatelessWidget {
             children: [
               ExpandableText(
                 item.description,
-                expandText: 'Read more',
-                collapseText: 'Read less',
+                expandText: S.of(context).readMore,
+                collapseText: S.of(context).readLess,
                 style: AppTextStyle.regular(),
                 animation: true,
                 expandOnTextTap: true,
@@ -54,7 +55,7 @@ class AboutSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: AppDimen.paddingLarge),
-                      Text('Genre', style: AppTextStyle.bold()),
+                      Text(S.of(context).genre, style: AppTextStyle.bold()),
                       const SizedBox(height: AppDimen.paddingMedium),
                       Wrap(
                         crossAxisAlignment: WrapCrossAlignment.start,

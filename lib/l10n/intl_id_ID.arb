@@ -1,0 +1,19 @@
+{
+  "@@locale":"id",
+  "about": "Tentang",
+  "readMore": "Baca lebih banyak",
+  "readLess": "Baca lebih sedikit",
+  "genre": "Genre",
+  "ratingAndScore": "Rating & Skor",
+  "releaseInformation": "Informasi Rilis",
+  "releasedOn": "Dirilis pada",
+  "availableFor": "Tersedia untuk",
+  "publisher": "Penerbit",
+  "developer": "Pengembang",
+  "screenshots": "Tangkapan Layar",
+  "mainSectionCTA": "Jelajahi game di seluruh dunia!",
+  "mainSectionSearchTitle": "Ditemukan {foundText} untuk {keyword}",
+  "game": "permainan",
+  "games": "permainan",
+  "searchPlaceholder": "Beri petunjuk apa yang ingin ku temukan untukmu"
+}

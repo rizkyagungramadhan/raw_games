@@ -2,9 +2,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:raw_games/di/service_locator.dart';
+import 'package:raw_games/generated/l10n.dart';
 import 'package:raw_games/utils/router/app_router.dart';
 import 'package:raw_games/utils/router/route.dart';
 import 'package:raw_games/utils/style/app_theme.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +22,13 @@ void main() async {
     runApp(
       MaterialApp(
         debugShowCheckedModeBanner: kDebugMode,
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         builder: (context, child) => MediaQuery(
           /// Lock font to always use 1.0 or normal
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

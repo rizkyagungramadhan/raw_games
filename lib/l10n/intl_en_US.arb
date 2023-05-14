@@ -1,0 +1,19 @@
+{
+  "@@locale":"en_US",
+  "about": "About",
+  "readMore": "Read more",
+  "readLess": "Read less",
+  "genre": "Genre",
+  "ratingAndScore": "Rating & Score",
+  "releaseInformation": "Release Information",
+  "releasedOn": "Released on",
+  "availableFor": "Available for",
+  "publisher": "Publisher",
+  "developer": "Developer",
+  "screenshots": "Screenshots",
+  "mainSectionCTA": "Explore games all over the world!",
+  "mainSectionSearchTitle": "Found {foundText} for {keyword}",
+  "game": "game",
+  "games": "games",
+  "searchPlaceholder": "Give me a clue so I can find you a game"
+}

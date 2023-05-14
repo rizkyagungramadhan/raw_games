@@ -15,6 +15,7 @@ class HomeGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PagedGridView(
+      padding: EdgeInsets.zero,
       pagingController: pagingController,
       builderDelegate: PagedChildBuilderDelegate<GameResponse>(
         itemBuilder: (context, item, index) => HomeGridCard(item: item),
@@ -22,6 +23,7 @@ class HomeGridView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height / 1.5,
             child: GridView.builder(
+              padding: EdgeInsets.zero,
               itemCount: 4,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,

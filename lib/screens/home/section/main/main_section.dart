@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:raw_games/api/repository/game/model/game_response.dart';
 import 'package:raw_games/common/exception/app_exception.dart';
+import 'package:raw_games/generated/l10n.dart';
 import 'package:raw_games/screens/home/bloc/home_bloc.dart';
 import 'package:raw_games/screens/home/const/home_screen_const.dart';
 import 'package:raw_games/screens/home/section/main/widgets/home_grid_view.dart';
@@ -58,11 +59,21 @@ class _MainSectionState extends State<MainSection> {
           children: [
             const SizedBox(height: AppDimen.paddingMedium),
             Text(
-              (state.keyword.isNotNullOrEmpty &&
-                      state.error == null &&
-                      state.totalSearchResult > 0)
-                  ? 'Found ${state.totalSearchResult} ${state.totalSearchResult < 1 ? 'game' : 'games'} for \'${state.keyword}\''
-                  : 'Explore games all over the world!',
+              () {
+                if (state.keyword.isNotNullOrEmpty &&
+                    state.error == null &&
+                    state.totalSearchResult > 0) {
+                  String foundText = '${state.totalSearchResult} ';
+                  foundText += state.totalSearchResult < 1
+                      ? S.of(context).game
+                      : S.of(context).games;
+
+                  return S.of(context).mainSectionSearchTitle(
+                      foundText, '\'${state.keyword.orEmpty}\'');
+                }
+
+                return S.of(context).mainSectionCTA;
+              }(),
               style: AppTextStyle.bold(size: AppDimen.fontExtraLarge),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
