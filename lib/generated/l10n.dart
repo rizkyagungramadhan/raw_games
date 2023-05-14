@@ -219,6 +219,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Sorry, the error is on us anyway.\nYou can still try again without limitation :)`
+  String get somethingErrorText {
+    return Intl.message(
+      'Sorry, the error is on us anyway.\nYou can still try again without limitation :)',
+      name: 'somethingErrorText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

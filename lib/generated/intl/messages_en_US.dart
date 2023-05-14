@@ -43,8 +43,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseInformation":
             MessageLookupByLibrary.simpleMessage("Release Information"),
         "releasedOn": MessageLookupByLibrary.simpleMessage("Released on"),
+        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "screenshots": MessageLookupByLibrary.simpleMessage("Screenshots"),
         "searchPlaceholder": MessageLookupByLibrary.simpleMessage(
-            "Give me a clue so I can find you a game")
+            "Give me a clue so I can find you a game"),
+        "somethingErrorText": MessageLookupByLibrary.simpleMessage(
+            "Sorry, the error is on us anyway.\nYou can still try again without limitation :)")
       };
 }

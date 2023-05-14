@@ -1,5 +1,5 @@
 {
-  "@@locale":"id",
+  "@@locale": "id",
   "about": "Tentang",
   "readMore": "Baca lebih banyak",
   "readLess": "Baca lebih sedikit",
@@ -16,5 +16,7 @@
   "game": "permainan",
   "games": "permainan",
   "searchPlaceholder": "Beri petunjuk apa yang ingin ku temukan untukmu",
-  "emptySearchText": "Maaf, sepertinya kami tidak menemukan game dengan kata kunci yang Anda cari.\nCoba gunakan kata kunci yang lain atau jelajahi koleksi game kami untuk menemukan game yang menarik untuk dimainkan."
+  "emptySearchText": "Maaf, sepertinya kami tidak menemukan game dengan kata kunci yang Anda cari.\nCoba gunakan kata kunci yang lain atau jelajahi koleksi game kami untuk menemukan game yang menarik untuk dimainkan.",
+  "somethingErrorText": "Maaf, kesalahan ada pada kami kok.\nAnda masih dapat mencoba lagi tanpa batasan :)",
+  "retry": "Coba lagi"
 }

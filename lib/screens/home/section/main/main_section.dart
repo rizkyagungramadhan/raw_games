@@ -79,7 +79,10 @@ class _MainSectionState extends State<MainSection> {
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: AppDimen.paddingMedium),
-            _ItemViewButton(activeViewType: state.itemViewType),
+            _ItemViewButton(
+              activeViewType: state.itemViewType,
+              isNeedToRefresh: state.items?.isEmpty ?? true,
+            ),
             const SizedBox(height: AppDimen.paddingMedium),
             Expanded(
               child: () {
@@ -100,9 +103,13 @@ class _MainSectionState extends State<MainSection> {
 
 class _ItemViewButton extends StatelessWidget {
   final HomeItemViewType activeViewType;
+  final bool isNeedToRefresh;
 
-  const _ItemViewButton({Key? key, required this.activeViewType})
-      : super(key: key);
+  const _ItemViewButton({
+    Key? key,
+    required this.activeViewType,
+    required this.isNeedToRefresh,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -120,9 +127,13 @@ class _ItemViewButton extends StatelessWidget {
           ),
           child: GestureDetector(
             onTap: () {
-              context
-                  .read<HomeBloc>()
-                  .add(const SwitchItemViewEvent(HomeItemViewType.grid));
+              final bloc = context.read<HomeBloc>();
+
+              bloc.add(const SwitchItemViewEvent(HomeItemViewType.grid));
+
+              if (isNeedToRefresh) {
+                bloc.add(const FetchEvent());
+              }
             },
             child: const Padding(
               padding: EdgeInsets.all(AppDimen.paddingMedium),
@@ -145,9 +156,13 @@ class _ItemViewButton extends StatelessWidget {
           ),
           child: GestureDetector(
             onTap: () {
-              context
-                  .read<HomeBloc>()
-                  .add(const SwitchItemViewEvent(HomeItemViewType.list));
+              final bloc = context.read<HomeBloc>();
+
+              bloc.add(const SwitchItemViewEvent(HomeItemViewType.list));
+
+              if (isNeedToRefresh) {
+                bloc.add(const FetchEvent());
+              }
             },
             child: const Padding(
               padding: EdgeInsets.all(AppDimen.paddingMedium),

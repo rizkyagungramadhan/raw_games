@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:raw_games/api/repository/game/model/game_response.dart';
 import 'package:raw_games/generated/l10n.dart';
+import 'package:raw_games/screens/home/bloc/home_bloc.dart';
 import 'package:raw_games/screens/home/const/home_screen_const.dart';
 import 'package:raw_games/screens/home/section/main/widgets/home_grid_card.dart';
 import 'package:raw_games/utils/style/app_dimen.dart';
 import 'package:raw_games/utils/style/app_text_style.dart';
+import 'package:raw_games/widgets/pagination_error_view.dart';
 import 'package:raw_games/widgets/shimmer_box.dart';
 
 class HomeGridView extends StatelessWidget {
@@ -56,6 +59,13 @@ class HomeGridView extends StatelessWidget {
               textAlign: TextAlign.center,
               style: AppTextStyle.regular(),
             ),
+          );
+        },
+        firstPageErrorIndicatorBuilder: (context) {
+          return PaginationErrorView(
+            onRetry: () {
+              context.read<HomeBloc>().add(const FetchEvent());
+            },
           );
         },
       ),

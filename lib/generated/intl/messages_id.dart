@@ -43,8 +43,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseInformation":
             MessageLookupByLibrary.simpleMessage("Informasi Rilis"),
         "releasedOn": MessageLookupByLibrary.simpleMessage("Dirilis pada"),
+        "retry": MessageLookupByLibrary.simpleMessage("Coba lagi"),
         "screenshots": MessageLookupByLibrary.simpleMessage("Tangkapan Layar"),
         "searchPlaceholder": MessageLookupByLibrary.simpleMessage(
-            "Beri petunjuk apa yang ingin ku temukan untukmu")
+            "Beri petunjuk apa yang ingin ku temukan untukmu"),
+        "somethingErrorText": MessageLookupByLibrary.simpleMessage(
+            "Maaf, kesalahan ada pada kami kok.\nAnda masih dapat mencoba lagi tanpa batasan :)")
       };
 }
