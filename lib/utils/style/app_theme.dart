@@ -10,7 +10,7 @@ class AppTheme {
     appBarTheme: const AppBarTheme().copyWith(
       backgroundColor: AppColor.primary,
       systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: AppColor.primary,
+        statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.light,
         systemNavigationBarColor: Colors.white,
