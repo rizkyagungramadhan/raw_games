@@ -7,7 +7,7 @@ import 'package:raw_games/utils/style/app_text_style.dart';
 class PaginationErrorView extends StatelessWidget {
   final VoidCallback? onRetry;
 
-  const PaginationErrorView({Key? key, required this.onRetry})
+  const PaginationErrorView({Key? key, this.onRetry})
       : super(key: key);
 
   @override

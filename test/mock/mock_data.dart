@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:raw_games/api/interface/response_list.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/developer_response.dart';
 import 'package:raw_games/api/repository/game/model/game_detail/game_detail_response.dart';
@@ -53,3 +55,5 @@ Map<String, dynamic> mockResponseListAsJson<T>(
     'error': isError ? mockError : null,
   };
 }
+
+const mockLocale = Locale('en_US');

@@ -19,23 +19,30 @@ class RatingStarIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children:  List<Widget>.generate(
-        maxRating,
-        (index) {
-          final fullStars = rating.floor();
-          final halfStar = rating - fullStars;
-          if (index < fullStars) {
-            return Icon(Icons.star, size: size, color: Colors.amber);
-          } else if (index == fullStars && halfStar > 0) {
-            return Icon(Icons.star_half, size: size, color: Colors.amber);
-          } else {
-            return Icon(Icons.star_border, size: size, color: Colors.grey);
-          }
-        },
-      ) + [
-        const SizedBox(width: AppDimen.paddingSmall),
-        Text('($rating)', style: AppTextStyle.regular(),)
-      ],
+      children: List<Widget>.generate(
+            maxRating,
+            (index) {
+              final fullStars = rating.floor();
+              final halfStar = rating - fullStars;
+              if (index < fullStars) {
+                return Icon(Icons.star, size: size, color: Colors.amber);
+              } else if (index == fullStars && halfStar > 0) {
+                return Icon(Icons.star_half, size: size, color: Colors.amber);
+              } else {
+                return Icon(Icons.star_border, size: size, color: Colors.grey);
+              }
+            },
+          ) +
+          () {
+            if (!showRatingNumber) return <Widget>[];
+            return [
+              const SizedBox(width: AppDimen.paddingSmall),
+              Text(
+                '($rating)',
+                style: AppTextStyle.regular(),
+              )
+            ];
+          }(),
     );
   }
 }
