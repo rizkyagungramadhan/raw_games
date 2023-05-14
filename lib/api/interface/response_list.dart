@@ -16,4 +16,10 @@ class ResponseList<T> {
   ) {
     return _$ResponseListFromJson(response, fromJsonT);
   }
+
+  Map<String, dynamic> toJson(
+    T Function(Object? json) toJsonT,
+  ) {
+    return _$ResponseListToJson(this, toJsonT);
+  }
 }

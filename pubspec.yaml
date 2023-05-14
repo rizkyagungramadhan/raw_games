@@ -54,10 +54,12 @@ dependencies:
   url_launcher: ^6.1.11
 
 dev_dependencies:
+  build_runner:
   flutter_test:
     sdk: flutter
 
-  build_runner:
+  mockito:
+  network_image_mock: ^2.1.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

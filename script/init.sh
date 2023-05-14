@@ -11,4 +11,4 @@ if ! flutter pub run build_runner build --delete-conflicting-outputs ; then
   exit 1
 fi
 
-echo "Done initializing libraries & generated files on this project!"
+echo "Done initializing libraries, generated class & mock files on this project!"
