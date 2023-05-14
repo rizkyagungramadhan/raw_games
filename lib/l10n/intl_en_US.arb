@@ -15,5 +15,6 @@
   "mainSectionSearchTitle": "Found {foundText} for {keyword}",
   "game": "game",
   "games": "games",
-  "searchPlaceholder": "Give me a clue so I can find you a game"
+  "searchPlaceholder": "Give me a clue so I can find you a game",
+  "emptySearchText": "Sorry, it seems like we couldn't find any game with the keyword you searched for.\nPlease try using a different keyword or browse our collection of games to find something interesting to play."
 }

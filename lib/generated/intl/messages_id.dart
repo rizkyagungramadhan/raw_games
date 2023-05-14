@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "about": MessageLookupByLibrary.simpleMessage("Tentang"),
         "availableFor": MessageLookupByLibrary.simpleMessage("Tersedia untuk"),
         "developer": MessageLookupByLibrary.simpleMessage("Pengembang"),
+        "emptySearchText": MessageLookupByLibrary.simpleMessage(
+            "Maaf, sepertinya kami tidak menemukan game dengan kata kunci yang Anda cari.\nCoba gunakan kata kunci yang lain atau jelajahi koleksi game kami untuk menemukan game yang menarik untuk dimainkan."),
         "game": MessageLookupByLibrary.simpleMessage("permainan"),
         "games": MessageLookupByLibrary.simpleMessage("permainan"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),

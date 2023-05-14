@@ -209,6 +209,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Sorry, it seems like we couldn't find any game with the keyword you searched for.\nPlease try using a different keyword or browse our collection of games to find something interesting to play.`
+  String get emptySearchText {
+    return Intl.message(
+      'Sorry, it seems like we couldn\'t find any game with the keyword you searched for.\nPlease try using a different keyword or browse our collection of games to find something interesting to play.',
+      name: 'emptySearchText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

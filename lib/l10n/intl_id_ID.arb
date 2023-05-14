@@ -15,5 +15,6 @@
   "mainSectionSearchTitle": "Ditemukan {foundText} untuk {keyword}",
   "game": "permainan",
   "games": "permainan",
-  "searchPlaceholder": "Beri petunjuk apa yang ingin ku temukan untukmu"
+  "searchPlaceholder": "Beri petunjuk apa yang ingin ku temukan untukmu",
+  "emptySearchText": "Maaf, sepertinya kami tidak menemukan game dengan kata kunci yang Anda cari.\nCoba gunakan kata kunci yang lain atau jelajahi koleksi game kami untuk menemukan game yang menarik untuk dimainkan."
 }

@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "about": MessageLookupByLibrary.simpleMessage("About"),
         "availableFor": MessageLookupByLibrary.simpleMessage("Available for"),
         "developer": MessageLookupByLibrary.simpleMessage("Developer"),
+        "emptySearchText": MessageLookupByLibrary.simpleMessage(
+            "Sorry, it seems like we couldn\'t find any game with the keyword you searched for.\nPlease try using a different keyword or browse our collection of games to find something interesting to play."),
         "game": MessageLookupByLibrary.simpleMessage("game"),
         "games": MessageLookupByLibrary.simpleMessage("games"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
