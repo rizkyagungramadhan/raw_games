@@ -25,7 +25,6 @@ This project was developed by utilizing several tools and software.
 
 ## Getting Started
 
-Instruksi di bawah ini akan membantu Anda memulai proyek Anda secara lokal. Ikuti instruksi ini untuk membuat salinan proyek Anda dan menjalankannya di mesin Anda.
 ### Prerequisite
 
 - Have [Flutter & Dart SDK](https://docs.flutter.dev/get-started/install) installed on your machine
